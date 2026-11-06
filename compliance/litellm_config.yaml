@@ -1,0 +1,17 @@
+# SPDX-License-Identifier: MIT
+# Silicium AI Ops — Turnkey 1-Click LiteLLM Proxy & Langfuse Gateway Configuration
+# Alternative unified package callback: ["silicium_ai_ops.litellm_gateway"]
+model_list:
+  - model_name: gpt-4o-mini
+    litellm_params:
+      model: openai/gpt-4o-mini
+      api_key: os.environ/OPENAI_API_KEY
+
+litellm_settings:
+  callbacks: ["silicium_json.litellm_gateway"]
+  success_callback: ["langfuse"]
+  cache: true
+
+environment_variables:
+  SILICIUM_PII_POLICY: "block"
+  SILICIUM_RESIDENCY_ZONE: "on-prem-sovereign"

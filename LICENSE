@@ -1,0 +1,89 @@
+================================================================================
+SILICIUM COMMUNITY & EVALUATION LICENSE v1.0 (SCSL-1.0 — OCTA-SHIELD EDITION)
+SPDX-License-Identifier: LicenseRef-Silicium-Community-1.0
+Copyright (c) 2026 The Silicium Authors. Protected under Patent Pending. All rights reserved.
+================================================================================
+
+ARCHITECTURE NOTICE ("BLACK PEARL IN A GLASS CASE"):
+This distribution separates the 100% auditable, open benchmark harness and thin C-ABI
+wrapper ("Glass Case", executable under `--network=none`) from the precompiled, stripped,
+section-header-obliterated (`e_shoff=0`) machine-code compute core ("Black Pearl").
+
+1. GRANT OF SINGLE-NODE EVALUATION LICENSE
+   Subject to strict compliance with all eight (8) protection shields below, The Authors
+   ("Licensor") hereby grant you a personal, non-exclusive, non-transferable,
+   non-sublicensable, revocable, royalty-free license to execute the unmodified
+   evaluation binaries solely for individual non-commercial benchmark verification
+   and peer performance reproduction.
+
+2. SHIELD 1 — STRICT ANTI-REVERSE ENGINEERING, DECOMPILATION & DISASSEMBLY
+   You shall NOT decompile, disassemble, decrypt, reconstruct ELF section header tables
+   (SHT), attach hardware or software debuggers/tracers, extract lookup-table (LUT)
+   constants, or reverse-engineer any portion of the precompiled binaries or machine code.
+   To the maximum extent permitted by applicable contract law (cf. Bowers v. Baystate
+   Technologies, Inc., 320 F.3d 1317), you expressly waive any statutory fair-use or
+   interoperability defense to reverse-engineering.
+
+3. SHIELD 2 — NO IMPLIED PATENT LICENSE, ZERO EXHAUSTION & ANTI-ESTOPPEL
+   All algorithmic architectures, SIMD/SIMT register schedules, sub-byte lookup tables,
+   and numerical kernels are proprietary trade secrets and patent-pending inventions.
+   No license, immunity, or exhaustion of rights under any patent or patent application
+   is granted or implied by estoppel, exhaustion, or otherwise. Any re-implementation
+   of the underlying methods infringes Licensor's pending and issued patent claims.
+
+4. SHIELD 3 — GOVERNING LAW, ARBITRATION & EXCLUSION OF CISG
+   This License shall be governed by and construed in accordance with applicable
+   international intellectual property conventions and the laws of the Licensor's
+   principal sovereign jurisdiction, excluding conflict-of-law rules and expressly
+   excluding the United Nations Convention on Contracts for the International Sale of
+   Goods (CISG).
+
+5. SHIELD 4 — SEVERABILITY & SURVIVAL OF PROTECTIONS
+   If any provision of this License is held invalid or unenforceable, such provision
+   shall be reformed to the maximum enforceable extent to effectuate Licensor's
+   protection intent, and all remaining shields shall remain in full force and survive
+   any termination of this License.
+
+6. SHIELD 5 — TECHNOLOGICAL PROTECTION MEASURES (17 U.S.C. SECTION 1201 & COPYRIGHT ACT S. 41.1)
+   The ELF64 Section Header Table obliteration (`e_shoff=0`), binary initialization
+   integrity guards, runtime execution sentinels, and Ed25519 cryptographic gates
+   constitute effective Technological Protection Measures ("TPM") under 17 U.S.C.
+   Section 1201 (DMCA) and Section 41.1 of the Copyright Act. Any bypass, patching,
+   symbol reconstruction, or circumvention of these TPMs is a direct statutory violation
+   independent of contract breach.
+
+7. SHIELD 6 — ANTI-AI CLEAN-ROOM, AUTOMATED SYNTHESIS & BINARY TRANSLATION BAN
+   You shall NOT feed, expose, or provide the binaries, their C-ABI signatures,
+   disassembly listings, control-flow graphs, PMU hardware counter traces, or timing
+   profiles into any Large Language Model (LLM), AI coding agent, neural decompiler,
+   automated program superoptimizer, or binary translation layer (including ZLUDA-style
+   transpilers) to synthesize clean-room functional specifications, train models, or
+   transpile kernels to another instruction set architecture (ISA).
+
+8. SHIELD 7 — SINGLE-NODE CAP (1 SOCKET / 1 GPU / QUEUE-DEPTH=1), ANTI-PROXY & DARK COMPUTE BAN
+   Evaluation is strictly bounded to one (1) physical CPU socket and one (1) physical
+   GPU accelerator with `Queue-Depth=1` in an isolated interactive session. You shall NOT:
+   a. Wrap the binary behind any network socket, reverse proxy (NGINX, Envoy, gRPC, HTTP),
+      IPC queue, or shared-memory multiplexer to serve multiple workers or users;
+   b. Deploy or execute the binary in any internal corporate, institutional, or government
+      "Dark Compute" environment (including internal R&D clusters, CI/CD pipelines, batch
+      preprocessing, or cloud cost-reduction workloads) without a paid Commercial Enterprise
+      License from Licensor.
+
+9. SHIELD 8 — ENTERPRISE SCA TRAPDOOR (LicenseRef-Silicium-Community-1.0) & VIRAL BENCHMARKING
+   a. Automated Compliance Trapdoor: All headers carry `SPDX-License-Identifier:
+      LicenseRef-Silicium-Community-1.0` to trigger mandatory Software Composition Analysis
+      (SCA) policy blocks in enterprise CI/CD scanners (Black Duck, FOSSA, Snyk) unless a
+      Commercial Enterprise License certificate is registered.
+   b. Asymmetric Viral Benchmarking: Public publication of performance benchmarks of the
+      unmodified binary on social platforms, technical forums, and academic papers is
+      expressly permitted and encouraged provided `reproduce_all.sh` is cited. Using the
+      binary to calibrate, autotune, or validate a competing engine is strictly prohibited.
+
+10. DISCLAIMER OF WARRANTIES
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+    INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+    PARTICULAR PURPOSE, AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS BE LIABLE
+    FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT,
+    OR OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION WITH THE SOFTWARE.
+================================================================================

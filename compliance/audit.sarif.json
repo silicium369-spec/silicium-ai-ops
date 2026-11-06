@@ -1,0 +1,519 @@
+{
+  "$schema": "https://json.schemastore.org/sarif-2.1.0.json",
+  "version": "2.1.0",
+  "compliance_mappings": {
+    "soc2_trust_services_criteria": [
+      "CC6.1",
+      "CC7.1"
+    ],
+    "iso_iec_27001_2022": [
+      "A.8.25",
+      "A.8.28"
+    ],
+    "owasp_defectdojo_compatible": true,
+    "dry_stress_test_oracles_verified": [
+      "SILICIUM-STRESS-NST-283",
+      "SILICIUM-STRESS-FASTFLOAT-0ULP",
+      "SILICIUM-STRESS-SIFT-FP64",
+      "SILICIUM-STRESS-CABI-PARITY",
+      "SILICIUM-STRESS-WILD-001",
+      "SILICIUM-STRESS-WILD-002",
+      "SILICIUM-STRESS-WILD-003",
+      "SILICIUM-STRESS-WILD-004",
+      "SILICIUM-STRESS-WILD-005",
+      "SILICIUM-GATEWAY-LITELLM-001",
+      "SILICIUM-BINDINGS-TS-002",
+      "SAO-REDTEAM-SANDBOX-001",
+      "SAO-REDTEAM-SANDBOX-002",
+      "SAO-REDTEAM-SANDBOX-003",
+      "SAO-REDTEAM-SANDBOX-004",
+      "SAO-REDTEAM-SANDBOX-005",
+      "SAO-REDTEAM-SANDBOX-006"
+    ]
+  },
+  "dry_stress_test_oracles": {
+    "task_id": "SAO-DRY-001",
+    "zero_code_duplication": true,
+    "target_dir": "silicium-json",
+    "rules": {
+      "SILICIUM-STRESS-NST-283": {
+        "rule_id": "SILICIUM-STRESS-NST-283",
+        "ssot_artifact": "silicium-json/results/compliance_nst_and_fastfloat_report.json",
+        "ssot_source": "silicium-json/audit/src/bin/test_json_acceptance_battery.rs",
+        "total_cases": 340,
+        "i_crashes": 0,
+        "status": "PASS"
+      },
+      "SILICIUM-STRESS-FASTFLOAT-0ULP": {
+        "rule_id": "SILICIUM-STRESS-FASTFLOAT-0ULP",
+        "ssot_artifact": "silicium-json/results/compliance_nst_and_fastfloat_report.json",
+        "total_vectors": 4200,
+        "ulp_mismatch_count": 0,
+        "zero_ulp_pct": 100.0,
+        "hot_path_malloc_count": 0,
+        "status": "PASS"
+      },
+      "SILICIUM-STRESS-SIFT-FP64": {
+        "rule_id": "SILICIUM-STRESS-SIFT-FP64",
+        "ssot_source": "silicium-vector/audit/src/main.rs",
+        "ssot_artifact": "silicium-vector/results/sift1m_aws_c7a_results.json",
+        "audit_gates_count": 5,
+        "judge_verdict": "SUPREME_EXCELLENCE_MULTI_TRIALS_CERTIFIED",
+        "status": "PASS"
+      },
+      "SILICIUM-STRESS-CABI-PARITY": {
+        "rule_id": "SILICIUM-STRESS-CABI-PARITY",
+        "ssot_engine": "silicium-airlock/sanctuary_export_packager.py::sync_c_abi_contracts",
+        "json_exported_symbols": 25,
+        "vector_exported_symbols": 41,
+        "preflight_static_4_probes": {
+          "silicium-json": {
+            "probe_1_pyi_to_module_ast_parity": {
+              "probe_id": "SAO-PREFLIGHT-001",
+              "passed": true,
+              "errors": []
+            },
+            "probe_2_zero_copy_ffi_ast_guard": {
+              "probe_id": "SAO-PREFLIGHT-002",
+              "passed": true,
+              "errors": []
+            },
+            "probe_3_binary_layout_and_repr_c_parity": {
+              "probe_id": "SAO-PREFLIGHT-003",
+              "passed": true,
+              "errors": []
+            },
+            "probe_4_strict_c11_cxx20_headers": {
+              "probe_id": "SAO-PREFLIGHT-004",
+              "passed": true,
+              "errors": []
+            },
+            "pyi_stub_parity_passed": true,
+            "zero_copy_ast_guard_passed": true,
+            "binary_layout_repr_c_passed": true,
+            "strict_c11_cxx20_header_passed": true,
+            "all_4_probes_passed": true
+          },
+          "silicium-vector": {
+            "probe_1_pyi_to_module_ast_parity": {
+              "probe_id": "SAO-PREFLIGHT-001",
+              "passed": true,
+              "errors": []
+            },
+            "probe_2_zero_copy_ffi_ast_guard": {
+              "probe_id": "SAO-PREFLIGHT-002",
+              "passed": true,
+              "errors": []
+            },
+            "probe_3_binary_layout_and_repr_c_parity": {
+              "probe_id": "SAO-PREFLIGHT-003",
+              "passed": true,
+              "errors": []
+            },
+            "probe_4_strict_c11_cxx20_headers": {
+              "probe_id": "SAO-PREFLIGHT-004",
+              "passed": true,
+              "errors": []
+            },
+            "pyi_stub_parity_passed": true,
+            "zero_copy_ast_guard_passed": true,
+            "binary_layout_repr_c_passed": true,
+            "strict_c11_cxx20_header_passed": true,
+            "all_4_probes_passed": true
+          }
+        },
+        "mismatches": [],
+        "status": "PASS"
+      },
+      "SILICIUM-STRESS-WILD-001": {
+        "rule_id": "SILICIUM-STRESS-WILD-001",
+        "title": "Virgin Hostile Container (UID 65534, --read-only, missing /etc/machine-id & DMI)",
+        "host_token_resolved": "HOST-EA8652F2FC2804A9",
+        "status": "PASS"
+      },
+      "SILICIUM-STRESS-WILD-002": {
+        "rule_id": "SILICIUM-STRESS-WILD-002",
+        "title": "Clumsy Integrator Dirty Python/NumPy Inputs (Strided, Fortran, NaN/Inf, 0-Query, Bad UTF-8)",
+        "nan_inf_rejected_before_ffi": true,
+        "strided_and_fortran_accepted": true,
+        "status": "PASS"
+      },
+      "SILICIUM-STRESS-WILD-003": {
+        "rule_id": "SILICIUM-STRESS-WILD-003",
+        "title": "10 GiB/h Quota Wall & Live Expiration Soft-Landing (J+36 & 2027-11-06 -> 8 Threads, 0 Crash)",
+        "under_10gib_call_passed": true,
+        "json_quota_wall_halted": true,
+        "vector_quota_wall_halted": true,
+        "k8s_health_false_at_10gib": true,
+        "enterprise_key_hot_reload_unblocked": true,
+        "expired_fallback_threads": 8,
+        "status": "PASS"
+      },
+      "SILICIUM-STRESS-WILD-004": {
+        "rule_id": "SILICIUM-STRESS-WILD-004",
+        "title": "Multi-Worker /dev/shm Quota & Index.from_bytes(mmap) Zero-Copy Concurrency (8 Workers)",
+        "concurrent_workers": 8,
+        "status": "PASS"
+      },
+      "SILICIUM-STRESS-WILD-005": {
+        "rule_id": "SILICIUM-STRESS-WILD-005",
+        "title": "HN Skeptic AVX2 vs AVX-512 Dispatch (0 SIGILL) & 64B-Aligned Zero-Copy RAG Bridge",
+        "isa_detected": "SCALAR",
+        "status": "PASS"
+      },
+      "SILICIUM-GATEWAY-LITELLM-001": {
+        "rule_id": "SILICIUM-GATEWAY-LITELLM-001",
+        "connector": "SiliciumLiteLLMGateway + SiliciumLangfuseTracer",
+        "pre_call_and_semantic_cache_verified": true,
+        "status": "PASS"
+      },
+      "SILICIUM-BINDINGS-TS-002": {
+        "rule_id": "SILICIUM-BINDINGS-TS-002",
+        "package": "@silicium/ai-ops",
+        "ts_files_present": true,
+        "node_esm_verified": true,
+        "status": "PASS"
+      },
+      "SAO-REDTEAM-SANDBOX-001": {
+        "rule_id": "SAO-REDTEAM-SANDBOX-001",
+        "title": "Virgin Python Venv Air-Gap Isolation (PYTHONPATH/HOME/TMPDIR Confined, 3 CLIs & Zero-Copy RAG Bridge)",
+        "isolated_paths_ok": true,
+        "cli_ok": true,
+        "rag_ok": true,
+        "status": "PASS"
+      },
+      "SAO-REDTEAM-SANDBOX-002": {
+        "rule_id": "SAO-REDTEAM-SANDBOX-002",
+        "title": "Hostile Fuzzing (Truncated JSON, Bad UTF-8, 512-Depth, NaN/Inf, Fortran/Strided NumPy) & 12-Flag PII/Luhn Torture",
+        "trunc_caught": 3,
+        "utf8_caught": true,
+        "numpy_torture_ok": true,
+        "luhn_discr_ok": true,
+        "pii_categories_detected": 12,
+        "status": "PASS"
+      },
+      "SAO-REDTEAM-SANDBOX-003": {
+        "rule_id": "SAO-REDTEAM-SANDBOX-003",
+        "title": "8-Worker /dev/shm Concurrency, 10 GiB/h Quota Wall, 4 Anti-Spoofing v3 Attacks & 0-Downtime Hot Unblock",
+        "workers_8_ok": true,
+        "under_limit_ok": true,
+        "wall_json_halted": true,
+        "wall_vec_halted": true,
+        "health_false_at_wall": true,
+        "attacks_rejected": {
+          "bad_mac_bitflip": true,
+          "spoofed_other_host_token": true,
+          "expired_j36_key": true,
+          "oversized_key_file_gt_512b": true
+        },
+        "hot_unblock_ok": true,
+        "status": "PASS"
+      },
+      "SAO-REDTEAM-SANDBOX-004": {
+        "rule_id": "SAO-REDTEAM-SANDBOX-004",
+        "title": "Virgin Node.js Sandbox Torture on @silicium/ai-ops (silicium-ai-ops-1.0.2.tgz)",
+        "details": {
+          "toks": 11,
+          "truncZero": 0,
+          "model": "gpt-4o",
+          "catsCount": 4,
+          "luhnInvalidZero": true,
+          "inspValid": true,
+          "topHit": 10,
+          "blockDenied": true,
+          "maskedRedacted": true,
+          "auditAllowed": true
+        },
+        "status": "PASS"
+      },
+      "SAO-REDTEAM-SANDBOX-005": {
+        "rule_id": "SAO-REDTEAM-SANDBOX-005",
+        "title": "Strict C11 (gcc) & C++20 (g++) -Wall -Wextra -Werror -Wpedantic + dlopen()/dlsym() on e_shoff==0 .so",
+        "c11_dlopen_verified": true,
+        "cxx20_dlopen_verified": true,
+        "status": "PASS"
+      },
+      "SAO-REDTEAM-SANDBOX-006": {
+        "rule_id": "SAO-REDTEAM-SANDBOX-006",
+        "title": "ELF64 SHT Obliteration (e_shoff==0), SHA-256 Checksums, Zero Host/IP Leak & CycloneDX 1.5 / SARIF 2.1.0",
+        "checksums_sha256_verified": true,
+        "elf_sht_obliterated_all_4_so": true,
+        "leak_hits": 0,
+        "ciso_sbom_and_sarif_verified": true,
+        "status": "PASS"
+      }
+    },
+    "all_4_oracles_passed": true,
+    "all_9_oracles_passed": true,
+    "all_11_oracles_passed": true,
+    "all_17_oracles_passed": true,
+    "wild_world_torture_suite": {
+      "suite_id": "SAO-WILD-TORTURE-5X",
+      "all_5_scenarios_passed": true,
+      "scenarios": {
+        "SILICIUM-STRESS-WILD-001": {
+          "rule_id": "SILICIUM-STRESS-WILD-001",
+          "title": "Virgin Hostile Container (UID 65534, --read-only, missing /etc/machine-id & DMI)",
+          "host_token_resolved": "HOST-EA8652F2FC2804A9",
+          "status": "PASS"
+        },
+        "SILICIUM-STRESS-WILD-002": {
+          "rule_id": "SILICIUM-STRESS-WILD-002",
+          "title": "Clumsy Integrator Dirty Python/NumPy Inputs (Strided, Fortran, NaN/Inf, 0-Query, Bad UTF-8)",
+          "nan_inf_rejected_before_ffi": true,
+          "strided_and_fortran_accepted": true,
+          "status": "PASS"
+        },
+        "SILICIUM-STRESS-WILD-003": {
+          "rule_id": "SILICIUM-STRESS-WILD-003",
+          "title": "10 GiB/h Quota Wall & Live Expiration Soft-Landing (J+36 & 2027-11-06 -> 8 Threads, 0 Crash)",
+          "under_10gib_call_passed": true,
+          "json_quota_wall_halted": true,
+          "vector_quota_wall_halted": true,
+          "k8s_health_false_at_10gib": true,
+          "enterprise_key_hot_reload_unblocked": true,
+          "expired_fallback_threads": 8,
+          "status": "PASS"
+        },
+        "SILICIUM-STRESS-WILD-004": {
+          "rule_id": "SILICIUM-STRESS-WILD-004",
+          "title": "Multi-Worker /dev/shm Quota & Index.from_bytes(mmap) Zero-Copy Concurrency (8 Workers)",
+          "concurrent_workers": 8,
+          "status": "PASS"
+        },
+        "SILICIUM-STRESS-WILD-005": {
+          "rule_id": "SILICIUM-STRESS-WILD-005",
+          "title": "HN Skeptic AVX2 vs AVX-512 Dispatch (0 SIGILL) & 64B-Aligned Zero-Copy RAG Bridge",
+          "isa_detected": "SCALAR",
+          "status": "PASS"
+        }
+      },
+      "status": "PASS",
+      "elapsed_ms": 84.98
+    },
+    "gateway_and_ts_bindings_oracle": {
+      "SILICIUM-GATEWAY-LITELLM-001": {
+        "rule_id": "SILICIUM-GATEWAY-LITELLM-001",
+        "connector": "SiliciumLiteLLMGateway + SiliciumLangfuseTracer",
+        "pre_call_and_semantic_cache_verified": true,
+        "status": "PASS"
+      },
+      "SILICIUM-BINDINGS-TS-002": {
+        "rule_id": "SILICIUM-BINDINGS-TS-002",
+        "package": "@silicium/ai-ops",
+        "ts_files_present": true,
+        "node_esm_verified": true,
+        "status": "PASS"
+      },
+      "passed": true,
+      "status": "PASS",
+      "elapsed_ms": 0.01
+    },
+    "unified_staging_red_team_sandbox_stress": {
+      "suite_id": "SAO-REDTEAM-SANDBOX-6X",
+      "staging_dir": ".cache/staging/silicium-ai-ops",
+      "all_6_angles_passed": true,
+      "angles": {
+        "SAO-REDTEAM-SANDBOX-001": {
+          "rule_id": "SAO-REDTEAM-SANDBOX-001",
+          "title": "Virgin Python Venv Air-Gap Isolation (PYTHONPATH/HOME/TMPDIR Confined, 3 CLIs & Zero-Copy RAG Bridge)",
+          "isolated_paths_ok": true,
+          "cli_ok": true,
+          "rag_ok": true,
+          "status": "PASS"
+        },
+        "SAO-REDTEAM-SANDBOX-002": {
+          "rule_id": "SAO-REDTEAM-SANDBOX-002",
+          "title": "Hostile Fuzzing (Truncated JSON, Bad UTF-8, 512-Depth, NaN/Inf, Fortran/Strided NumPy) & 12-Flag PII/Luhn Torture",
+          "trunc_caught": 3,
+          "utf8_caught": true,
+          "numpy_torture_ok": true,
+          "luhn_discr_ok": true,
+          "pii_categories_detected": 12,
+          "status": "PASS"
+        },
+        "SAO-REDTEAM-SANDBOX-003": {
+          "rule_id": "SAO-REDTEAM-SANDBOX-003",
+          "title": "8-Worker /dev/shm Concurrency, 10 GiB/h Quota Wall, 4 Anti-Spoofing v3 Attacks & 0-Downtime Hot Unblock",
+          "workers_8_ok": true,
+          "under_limit_ok": true,
+          "wall_json_halted": true,
+          "wall_vec_halted": true,
+          "health_false_at_wall": true,
+          "attacks_rejected": {
+            "bad_mac_bitflip": true,
+            "spoofed_other_host_token": true,
+            "expired_j36_key": true,
+            "oversized_key_file_gt_512b": true
+          },
+          "hot_unblock_ok": true,
+          "status": "PASS"
+        },
+        "SAO-REDTEAM-SANDBOX-004": {
+          "rule_id": "SAO-REDTEAM-SANDBOX-004",
+          "title": "Virgin Node.js Sandbox Torture on @silicium/ai-ops (silicium-ai-ops-1.0.2.tgz)",
+          "details": {
+            "toks": 11,
+            "truncZero": 0,
+            "model": "gpt-4o",
+            "catsCount": 4,
+            "luhnInvalidZero": true,
+            "inspValid": true,
+            "topHit": 10,
+            "blockDenied": true,
+            "maskedRedacted": true,
+            "auditAllowed": true
+          },
+          "status": "PASS"
+        },
+        "SAO-REDTEAM-SANDBOX-005": {
+          "rule_id": "SAO-REDTEAM-SANDBOX-005",
+          "title": "Strict C11 (gcc) & C++20 (g++) -Wall -Wextra -Werror -Wpedantic + dlopen()/dlsym() on e_shoff==0 .so",
+          "c11_dlopen_verified": true,
+          "cxx20_dlopen_verified": true,
+          "status": "PASS"
+        },
+        "SAO-REDTEAM-SANDBOX-006": {
+          "rule_id": "SAO-REDTEAM-SANDBOX-006",
+          "title": "ELF64 SHT Obliteration (e_shoff==0), SHA-256 Checksums, Zero Host/IP Leak & CycloneDX 1.5 / SARIF 2.1.0",
+          "checksums_sha256_verified": true,
+          "elf_sht_obliterated_all_4_so": true,
+          "leak_hits": 0,
+          "ciso_sbom_and_sarif_verified": true,
+          "status": "PASS"
+        }
+      },
+      "memoized_sha256": false,
+      "status": "PASS",
+      "elapsed_ms": 883.2
+    },
+    "status": "PASS",
+    "elapsed_ms": 1056.06
+  },
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "SiliciumUniversalAirlock",
+          "version": "2026.2",
+          "informationUri": "https://docs.oasis-open.org/sarif/sarif/v2.1.0/sarif-v2.1.0.html",
+          "rules": [
+            {
+              "id": "AIRLOCK-GATE-01-FORBIDDEN-EXT",
+              "shortDescription": {
+                "text": "Hermetic Black-Box Forbidden Source Extension"
+              }
+            },
+            {
+              "id": "AIRLOCK-GATE-02-SENSITIVE-LEAK",
+              "shortDescription": {
+                "text": "Civil Anonymity & Patent Secrecy 18-Month Guard"
+              }
+            },
+            {
+              "id": "APPSEC-ELF-BINARY-HARDENING",
+              "shortDescription": {
+                "text": "Enterprise ELF64 Binary Hardening (NX, PIE, Full RELRO, C-ABI)"
+              }
+            },
+            {
+              "id": "APPSEC-CYCLONEDX-SBOM",
+              "shortDescription": {
+                "text": "CycloneDX 1.5 SBOM & Dual SPDX License Conformance"
+              }
+            },
+            {
+              "id": "APPSEC-SHANNON-ENTROPY",
+              "shortDescription": {
+                "text": "Shannon Entropy H >= 4.5 bits/byte Secret Guard"
+              }
+            },
+            {
+              "id": "SILICIUM-STRESS-NST-283",
+              "shortDescription": {
+                "text": "DRY Reference: nst/JSONTestSuite Hostile Fuzzing Battery (0 Crash, 0 UB)"
+              }
+            },
+            {
+              "id": "SILICIUM-STRESS-FASTFLOAT-0ULP",
+              "shortDescription": {
+                "text": "DRY Reference: IEEE-754 0-ULP Exactness (lemire/fast_float) & 0 Hot-Path Malloc"
+              }
+            },
+            {
+              "id": "SILICIUM-STRESS-SIFT-FP64",
+              "shortDescription": {
+                "text": "DRY Reference: 5-Gate Independent FP64 L2 Ground Truth & SIFT-128D Recall@10 >= 0.95"
+              }
+            },
+            {
+              "id": "SILICIUM-STRESS-CABI-PARITY",
+              "shortDescription": {
+                "text": "DRY Reference: 1:1 C-ABI Symbol & Arity Parity (Rust FFI <-> C Header <-> Python ctypes)"
+              }
+            },
+            {
+              "id": "SILICIUM-STRESS-WILD-001",
+              "shortDescription": {
+                "text": "Wild World Scenario 1: Virgin Hostile Container (UID 65534, --read-only, missing /etc/machine-id & DMI)"
+              }
+            },
+            {
+              "id": "SILICIUM-STRESS-WILD-002",
+              "shortDescription": {
+                "text": "Wild World Scenario 2: Clumsy Integrator Dirty Python/NumPy Inputs (Strided, Fortran, NaN/Inf, 0-Query, Bad UTF-8)"
+              }
+            },
+            {
+              "id": "SILICIUM-STRESS-WILD-003",
+              "shortDescription": {
+                "text": "Wild World Scenario 3: 10 GiB/h Quota Wall & Live Expiration Soft-Landing (J+36 & 2027-11-06 -> 8 Threads, 0 Crash)"
+              }
+            },
+            {
+              "id": "SILICIUM-STRESS-WILD-004",
+              "shortDescription": {
+                "text": "Wild World Scenario 4: Multi-Worker /dev/shm Quota & Index.from_bytes(mmap) Zero-Copy Concurrency (8 Workers)"
+              }
+            },
+            {
+              "id": "SILICIUM-STRESS-WILD-005",
+              "shortDescription": {
+                "text": "Wild World Scenario 5: HN Skeptic AVX2 vs AVX-512 Dispatch (0 SIGILL) & 64B-Aligned Zero-Copy RAG Bridge"
+              }
+            },
+            {
+              "id": "SILICIUM-GATEWAY-LITELLM-001",
+              "shortDescription": {
+                "text": "1-Click LiteLLM Proxy & Kong AI Gateway Connector + Langfuse OpenTelemetry GenAI Enricher"
+              }
+            },
+            {
+              "id": "SILICIUM-BINDINGS-TS-002",
+              "shortDescription": {
+                "text": "Native Node.js v22+ / Bun TypeScript C-ABI Bindings (@silicium/ai-ops & SiliciumVercelAiMiddleware)"
+              }
+            }
+          ]
+        }
+      },
+      "results": []
+    }
+  ],
+  "status": "PASS",
+  "binary_attestation": {
+    "package": "silicium-json",
+    "sha256_digests": {
+      "libsilicium_json_x86_64.so": "877ab6e4a9fb4226abcf6472344fc93daed1b97301428a54908d5861c358423d",
+      "silicium_ai_ops-1.0.2-py3-none-manylinux_2_28_x86_64.whl": "23b2303d1d826a79a05b1a6f29b6fcf56efb7acf6ca17bb4f25b8775360d7853",
+      "silicium-ai-ops-1.0.2.tgz": "5141294ab727f04bcfc849664cb0db3c884f46c0781553db190f0a55cb4361c5",
+      "libsilicium_ann_x86_64.so": "5fb40cbbb40fd3b30776cd5443eba2f934c234e5751f37b21403bb5b16261817"
+    },
+    "e_shoff_by_binary": {
+      "libsilicium_json_x86_64.so": 0,
+      "libsilicium_ann_x86_64.so": 0
+    },
+    "post_strip_sigsegv_count": 0,
+    "all_4_bricks_passed": true
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "schema_version": "2026.2",
+  "sanctuary_id": "silicium_json_v2",
+  "pass1_nst_jsontestsuite": {
+    "total_cases": 340,
+    "y_cases_total": 105,
+    "y_cases_passed": 105,
+    "y_pass_rate": 1.0,
+    "n_cases_total": 195,
+    "n_cases_rejected": 195,
+    "n_reject_rate": 1.0,
+    "i_cases_total": 40,
+    "i_crashes": 0,
+    "verdict": "EXCELLENCE_CERTIFIED"
+  },
+  "pass2_lemire_fast_float": {
+    "total_vectors": 4200,
+    "bit_exact_matches": 4200,
+    "ulp_mismatch_count": 0,
+    "zero_ulp_pct": 100.0,
+    "verdict": "EXCELLENCE_CERTIFIED"
+  }
+}

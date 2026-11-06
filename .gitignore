@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.DS_Store
+target/
+*.log
+.env
+scratch/
+lib/
+dist/
+compliance/sao_launch_roadmap.json

@@ -1,0 +1,98 @@
+{
+  "schema_version": "2026.11",
+  "strategy": "100_PCT_GITHUB_NATIVE_MONOLITH_ZERO_SOCIAL_MEDIA",
+  "primary_value_hierarchy": [
+    "1_HNSW_VECTOR_SEARCH_AND_SUB_50US_IN_PROCESS_SEMANTIC_CACHE_4X_RAM_REDUCTION",
+    "2_ZERO_COPY_64B_NDJSON_TO_HNSW_RAG_BRIDGE_ZERO_PYTHON_HEAP",
+    "3_SIMD_JSON_WIRE_SPEED_STREAMING_8GBS_SINGLE_CORE_390GBS_MULTICORE",
+    "4_OPTIONAL_SINGLE_PASS_COMPLIANCE_INSPECTION_BONUS"
+  ],
+  "flagship_showcases": [
+    {
+      "rank": 1,
+      "repo": "BerriAI/litellm",
+      "spearhead": "In-Process HNSW Semantic Cache (< 50 us, 4x less RAM, zero external Redis) & Zero-Copy JSON Gateway",
+      "connector": "SiliciumSemanticCache + SiliciumLiteLLMGateway"
+    },
+    {
+      "rank": 2,
+      "repo": "open-webui/open-webui",
+      "spearhead": "Instant Local Vector RAG Backend (4x lower RAM vs ChromaDB) & Zero-Copy 64B NDJSON Document Loader",
+      "connector": "SiliciumVectorStore + ingest_ndjson_to_vector_arena_zero_copy"
+    }
+  ],
+  "launch_posture": {
+    "community_edition": "FREE_FOREVER",
+    "slot_1_indie_workstation_19usd": "AVAILABLE_NOW_PUBLIC_BETA",
+    "commercial_licenses": "SLOTS_2_TO_10_COMING_SOON_ON_GITHUB",
+    "funding_button_phase_1": "ACTIVE_TIER0_AND_SLOT1_19USD_PUBLIC_BETA",
+    "ip_ownership_clause": "CLAUSE_4_SOLE_AND_EXCLUSIVE_OWNERSHIP_OF_ALL_CORE_IP_PATENTS_AND_TRADE_SECRETS"
+  },
+  "github_topics": [
+    "hnsw",
+    "vector-search",
+    "semantic-cache",
+    "rag",
+    "json-parser",
+    "simd",
+    "zero-copy",
+    "litellm",
+    "open-webui",
+    "fastapi",
+    "langchain",
+    "llamaindex",
+    "vllm",
+    "instructor",
+    "bun-ffi",
+    "vercel-ai-sdk",
+    "ray-data",
+    "huggingface-datasets",
+    "avx512",
+    "c-abi"
+  ],
+  "upstream_pr_targets": [
+    {
+      "repo": "BerriAI/litellm",
+      "integration_type": "In-Process HNSW Semantic Cache & Zero-Copy JSON Gateway (SiliciumSemanticCache + SiliciumLiteLLMGateway, litellm_silicium_integration.py, litellm_pr_body.md)",
+      "license": "MIT",
+      "zero_binary_in_pr": true
+    },
+    {
+      "repo": "open-webui/open-webui",
+      "integration_type": "Local Zero-Copy HNSW VectorDB & Document RAG Backend (SiliciumVectorStore + ingest_ndjson_to_vector_arena_zero_copy)",
+      "license": "MIT",
+      "zero_binary_in_pr": true
+    },
+    {
+      "repo": "langchain-ai/langchain",
+      "integration_type": "Community DocumentLoader & VectorStore (SiliciumJsonLoader + SiliciumVectorStore)",
+      "license": "MIT",
+      "zero_binary_in_pr": true
+    },
+    {
+      "repo": "run-llama/llama_index",
+      "integration_type": "Zero-Copy NDJSON Reader & HNSW VectorStore integration (llamaindex_silicium_integration.py)",
+      "license": "MIT",
+      "zero_binary_in_pr": true
+    },
+    {
+      "repo": "erikbern/ann-benchmarks",
+      "integration_type": "Algorithm harness & Dockerfile for Silicium-Vector (SIFT-1M 369,836 QPS)",
+      "license": "MIT",
+      "zero_binary_in_pr": true
+    },
+    {
+      "repo": "miloyip/nativejson-benchmark",
+      "integration_type": "C-ABI conformance & speed benchmark adapter for Silicium-JSON (340/340 NST, 0 ULP)",
+      "license": "MIT",
+      "zero_binary_in_pr": true
+    },
+    {
+      "repo": "jasonnlx/awesome-llm-system",
+      "integration_type": "Curated ecosystem listing for Silicium AI Ops Duo (Vector + JSON)",
+      "license": "MIT",
+      "zero_binary_in_pr": true
+    }
+  ],
+  "package": "silicium-json"
+}

@@ -1,0 +1,172 @@
+{
+  "brick_id": "cyclonedx-sbom",
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "version": 1,
+  "metadata": {
+    "component": {
+      "name": "silicium-json",
+      "type": "application",
+      "licenses": [
+        {
+          "expression": "LicenseRef-Silicium-Community-1.0 OR LicenseRef-Silicium-Commercial-1.0"
+        }
+      ]
+    },
+    "tools": [
+      {
+        "vendor": "Silicium Systems",
+        "name": "SiliciumUniversalAirlockCycloneDX",
+        "version": "2026.2"
+      }
+    ]
+  },
+  "components": [
+    {
+      "type": "library",
+      "name": "libsilicium_json_x86_64.so",
+      "version": "1.0.2",
+      "purl": "pkg:generic/silicium-json/libsilicium_json_x86_64.so@1.0.2",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "877ab6e4a9fb4226abcf6472344fc93daed1b97301428a54908d5861c358423d"
+        }
+      ],
+      "licenses": [
+        {
+          "expression": "LicenseRef-Silicium-Community-1.0 OR LicenseRef-Silicium-Commercial-1.0"
+        }
+      ],
+      "scope": "required"
+    },
+    {
+      "type": "library",
+      "name": "silicium_ai_ops-1.0.2-py3-none-manylinux_2_28_x86_64.whl",
+      "version": "1.0.2",
+      "purl": "pkg:generic/silicium-json/silicium_ai_ops-1.0.2-py3-none-manylinux_2_28_x86_64.whl@1.0.2",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "23b2303d1d826a79a05b1a6f29b6fcf56efb7acf6ca17bb4f25b8775360d7853"
+        }
+      ],
+      "licenses": [
+        {
+          "expression": "LicenseRef-Silicium-Community-1.0 OR LicenseRef-Silicium-Commercial-1.0"
+        }
+      ],
+      "scope": "required"
+    },
+    {
+      "type": "library",
+      "name": "silicium-ai-ops-1.0.2.tgz",
+      "version": "1.0.2",
+      "purl": "pkg:generic/silicium-json/silicium-ai-ops-1.0.2.tgz@1.0.2",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "5141294ab727f04bcfc849664cb0db3c884f46c0781553db190f0a55cb4361c5"
+        }
+      ],
+      "licenses": [
+        {
+          "expression": "LicenseRef-Silicium-Community-1.0 OR LicenseRef-Silicium-Commercial-1.0"
+        }
+      ],
+      "scope": "required"
+    },
+    {
+      "type": "library",
+      "name": "libsilicium_ann_x86_64.so",
+      "version": "1.0.2",
+      "purl": "pkg:generic/silicium-json/libsilicium_ann_x86_64.so@1.0.2",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "5fb40cbbb40fd3b30776cd5443eba2f934c234e5751f37b21403bb5b16261817"
+        }
+      ],
+      "licenses": [
+        {
+          "expression": "LicenseRef-Silicium-Community-1.0 OR LicenseRef-Silicium-Commercial-1.0"
+        }
+      ],
+      "scope": "required"
+    },
+    {
+      "type": "library",
+      "name": "silicium_suite_core",
+      "version": "0.1.0",
+      "purl": "pkg:cargo/silicium_suite_core@0.1.0",
+      "licenses": [
+        {
+          "expression": "LicenseRef-Silicium-Community-1.0 OR LicenseRef-Silicium-Commercial-1.0"
+        }
+      ],
+      "scope": "required"
+    },
+    {
+      "type": "library",
+      "name": "libc",
+      "version": "0.2",
+      "purl": "pkg:cargo/libc@0.2",
+      "scope": "required"
+    },
+    {
+      "type": "library",
+      "name": "rayon",
+      "version": "1.10",
+      "purl": "pkg:cargo/rayon@1.10",
+      "scope": "required"
+    },
+    {
+      "type": "library",
+      "name": "silicium_json_engine",
+      "version": "0.1.0",
+      "purl": "pkg:cargo/silicium_json_engine@0.1.0",
+      "licenses": [
+        {
+          "expression": "LicenseRef-Silicium-Community-1.0 OR LicenseRef-Silicium-Commercial-1.0"
+        }
+      ],
+      "scope": "required"
+    },
+    {
+      "type": "library",
+      "name": "silicium_vector_engine",
+      "version": "0.1.0",
+      "purl": "pkg:cargo/silicium_vector_engine@0.1.0",
+      "licenses": [
+        {
+          "expression": "LicenseRef-Silicium-Community-1.0 OR LicenseRef-Silicium-Commercial-1.0"
+        }
+      ],
+      "scope": "required"
+    },
+    {
+      "type": "library",
+      "name": "crossbeam-channel",
+      "version": "0.5",
+      "purl": "pkg:cargo/crossbeam-channel@0.5",
+      "scope": "required"
+    },
+    {
+      "type": "library",
+      "name": "parking_lot",
+      "version": "0.12",
+      "purl": "pkg:cargo/parking_lot@0.12",
+      "scope": "required"
+    }
+  ],
+  "vulnerabilities": [],
+  "transitive_cves_count": 0,
+  "network_calls_count": 0,
+  "status": "PASS",
+  "system_shared_libraries": [
+    "libc.so.6",
+    "libm.so.6",
+    "libpthread.so.0"
+  ],
+  "external_network_dependencies_count": 0
+}
